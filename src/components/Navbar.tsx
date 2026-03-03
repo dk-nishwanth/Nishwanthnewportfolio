@@ -1,45 +1,10 @@
 import { motion, AnimatePresence } from "motion/react";
 import { X } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [textColor, setTextColor] = useState("text-white");
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const navbar = document.querySelector("nav");
-      if (!navbar) return;
-
-      const navbarRect = navbar.getBoundingClientRect();
-
-      // Get the element at the navbar position
-      const elementAtNavbar = document.elementFromPoint(window.innerWidth / 2, navbarRect.height / 2);
-      
-      if (elementAtNavbar) {
-        const bgColor = window.getComputedStyle(elementAtNavbar).backgroundColor;
-        const classList = elementAtNavbar.className;
-
-        // Check for light backgrounds by class or computed color
-        if (classList.includes("bg-shift-orange") || 
-            classList.includes("bg-white") || 
-            classList.includes("bg-[#C5C5C5]") ||
-            classList.includes("bg-shift-gray") ||
-            bgColor === "rgb(255, 255, 255)" ||
-            bgColor.includes("rgb(197, 197, 197)")) {
-          setTextColor("text-shift-black");
-        } else {
-          // Default to white for dark backgrounds
-          setTextColor("text-white");
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const menuItems = [
     { name: "Home", path: "/", sup: "" },
@@ -53,21 +18,21 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 lg:px-6 py-4 lg:py-6 bg-white/80 backdrop-blur-sm border-b border-shift-black/10">
-        <Link to="/" className={`flex items-center gap-2 group text-shift-black`}>
-          <div className={`w-6 h-6 lg:w-8 lg:h-8 flex items-center justify-center rotate-45 transition-transform group-hover:rotate-90 bg-shift-black`}>
-            <div className={`w-3 h-3 lg:w-4 lg:h-4 border-2 border-white`}></div>
+      <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 lg:px-6 py-4 lg:py-6 bg-shift-black">
+        <Link to="/" className={`flex items-center gap-2 group text-white`}>
+          <div className={`w-6 h-6 lg:w-8 lg:h-8 flex items-center justify-center rotate-45 transition-transform group-hover:rotate-90 bg-white`}>
+            <div className={`w-3 h-3 lg:w-4 lg:h-4 border-2 border-shift-black`}></div>
           </div>
           <span className="font-extrabold text-sm lg:text-2xl tracking-tighter uppercase">DK NISHWANTH</span>
         </Link>
         
         <button 
           onClick={() => setIsOpen(true)}
-          className={`flex items-center gap-2 group transition-colors text-shift-black`}
+          className={`flex items-center gap-2 group transition-colors text-white`}
         >
           <div className="flex flex-col gap-1 items-end">
-            <div className={`h-[1px] w-8 transition-all group-hover:w-12 bg-shift-black`}></div>
-            <div className={`h-[1px] w-6 transition-all group-hover:w-12 bg-shift-black`}></div>
+            <div className={`h-[1px] w-8 transition-all group-hover:w-12 bg-white`}></div>
+            <div className={`h-[1px] w-6 transition-all group-hover:w-12 bg-white`}></div>
           </div>
           <span className="font-mono text-xs uppercase tracking-widest">Menu</span>
         </button>
