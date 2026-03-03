@@ -50,8 +50,8 @@ export default function EducationPage() {
               key={i}
               initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className={`flex flex-col lg:flex-row gap-8 lg:gap-24 items-start ${i % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
             >
               <div className="flex-1">
@@ -68,7 +68,7 @@ export default function EducationPage() {
               </div>
               <div className="w-full lg:w-1/3 aspect-square bg-shift-gray relative overflow-hidden group">
                 <img 
-                  src={i === 0 ? "https://picsum.photos/seed/computer-science-edu/800/800" : "https://picsum.photos/seed/architecture-edu/800/800"} 
+                  src={i === 0 ? "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=800&fit=crop&q=80" : "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800&h=800&fit=crop&q=80"} 
                   alt={edu.inst}
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                   referrerPolicy="no-referrer"
@@ -94,8 +94,8 @@ export default function EducationPage() {
                 key={i}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: i * 0.05, duration: 0.4 }}
                 className="p-8 lg:p-10 border border-white/10 hover:bg-white/5 transition-colors group"
               >
                 <p className="font-mono text-[9px] lg:text-[10px] text-shift-orange mb-4">CERT_0{i + 1}</p>

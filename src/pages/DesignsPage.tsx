@@ -5,42 +5,42 @@ export default function DesignsPage() {
     { 
       title: "Electric Go", 
       cat: "App UI/UX", 
-      img: "https://picsum.photos/seed/electric-go/1200/1600", 
+      img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=1600&fit=crop&q=80", 
       span: "row-span-2",
       link: "https://www.behance.net/gallery/212573331/Electric-Go-%28-Electric-rental-vehicle-booking-app%29"
     },
     { 
       title: "Poster Designs", 
       cat: "Graphic Design", 
-      img: "https://picsum.photos/seed/posters/1200/800", 
+      img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&h=800&fit=crop&q=80", 
       span: "col-span-2",
       link: "https://www.behance.net/gallery/212025573/Poster-Design"
     },
     { 
       title: "Mall Landing Page", 
       cat: "Web Design", 
-      img: "https://picsum.photos/seed/mall-landing/800/1200", 
+      img: "https://images.unsplash.com/photo-1567521464027-f127ff144326?w=800&h=1200&fit=crop&q=80", 
       span: "",
       link: "https://www.behance.net/gallery/211960287/Landing-Page-for-Mall"
     },
     { 
       title: "Resort Suggestion App", 
       cat: "Mobile UI", 
-      img: "https://picsum.photos/seed/resort-app/1200/1200", 
+      img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=1200&fit=crop&q=80", 
       span: "col-span-2",
       link: "https://www.behance.net/gallery/209151259/Resort-Suggestion-App"
     },
     { 
       title: "Food Website Landing", 
       cat: "Web Design", 
-      img: "https://picsum.photos/seed/food-web/800/800", 
+      img: "https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=800&h=800&fit=crop&q=80", 
       span: "",
       link: "https://www.behance.net/gallery/208369221/Landing-page-for-Foodwebsite"
     },
     { 
       title: "Full Portfolio", 
       cat: "Behance", 
-      img: "https://picsum.photos/seed/behance-profile/1200/800", 
+      img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&h=800&fit=crop&q=80", 
       span: "col-span-2",
       link: "https://www.behance.net/dknishwanth"
     },
