@@ -69,9 +69,9 @@ export default function SolutionsSection() {
               {skill.description}
             </p>
             
-            <button className={`mt-8 lg:mt-10 px-8 py-3 rounded-full border border-shift-black font-mono text-[10px] uppercase tracking-widest hover:bg-shift-black hover:text-white transition-colors ${skill.highlight ? 'bg-shift-black text-white' : ''}`}>
+            <a href="/skills" className={`mt-8 lg:mt-10 px-8 py-3 rounded-full border border-shift-black font-mono text-[10px] uppercase tracking-widest hover:bg-shift-black hover:text-white transition-colors inline-block ${skill.highlight ? 'bg-shift-black text-white' : ''}`}>
               View Details
-            </button>
+            </a>
           </div>
         </motion.div>
       ))}

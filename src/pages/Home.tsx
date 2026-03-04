@@ -113,9 +113,9 @@ export default function Home() {
             <span className="text-5xl lg:text-[10rem] font-thin opacity-30">)</span>
           </div>
           
-          <button className="w-full lg:w-auto px-12 lg:px-16 py-5 lg:py-6 bg-shift-black text-white rounded-full font-mono text-xs lg:text-sm uppercase tracking-widest hover:scale-105 transition-transform active:scale-95 shadow-xl">
+          <a href="/contact" className="w-full lg:w-auto px-12 lg:px-16 py-5 lg:py-6 bg-shift-black text-white rounded-full font-mono text-xs lg:text-sm uppercase tracking-widest hover:scale-105 transition-transform active:scale-95 shadow-xl inline-block text-center">
             Send Message
-          </button>
+          </a>
         </motion.div>
         
         <div className="mt-24 lg:mt-48 grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 text-left max-w-7xl mx-auto border-t border-shift-black/20 pt-12 lg:pt-16 relative z-10">

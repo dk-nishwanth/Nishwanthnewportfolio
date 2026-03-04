@@ -48,9 +48,9 @@ export default function NewsSection() {
             </p>
           </div>
           
-          <button className="self-start mt-12 px-10 py-4 rounded-full border border-white/20 font-mono text-[10px] uppercase tracking-widest hover:bg-shift-orange hover:text-black transition-colors">
+          <a href="/education" className="self-start mt-12 px-10 py-4 rounded-full border border-white/20 font-mono text-[10px] uppercase tracking-widest hover:bg-shift-orange hover:text-black transition-colors inline-block">
             View Certificate
-          </button>
+          </a>
         </motion.div>
       </div>
 
