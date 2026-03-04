@@ -6,7 +6,7 @@ export default function AboutPage() {
     <main className="pt-24 min-h-screen bg-shift-gray">
       {/* Editorial Header */}
       <div className="grid grid-cols-1 lg:grid-cols-2 border-b border-shift-black">
-        <div className="p-8 lg:p-24 bg-shift-orange flex flex-col justify-end min-h-[40vh] lg:min-h-[60vh]">
+        <div className="p-8 lg:p-24 bg-shift-orange flex flex-col justify-start min-h-auto lg:min-h-auto">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}

@@ -9,7 +9,8 @@ export default function Hero() {
         <div className="flex-1 p-6 flex flex-col justify-center">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="font-mono text-sm mb-4 bg-black/10 self-start px-3 py-1 rounded inline-block"
           >
@@ -18,7 +19,8 @@ export default function Hero() {
           
           <motion.h1 
             initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-6xl font-extrabold leading-tight tracking-tighter mb-2"
           >
@@ -27,7 +29,8 @@ export default function Hero() {
 
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-5xl font-extrabold leading-tight tracking-tighter mb-6"
           >
@@ -36,7 +39,8 @@ export default function Hero() {
 
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.8 }}
             className="font-bold text-sm leading-tight tracking-tight mb-6"
           >
@@ -45,7 +49,8 @@ export default function Hero() {
 
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 1 }}
             className="font-medium text-xs opacity-80 leading-relaxed mb-6"
           >
@@ -54,7 +59,8 @@ export default function Hero() {
 
           <motion.a 
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 1.2 }}
             href="/src/Nishwanth-DK-Resume.pdf" 
             download="Nishwanth-DK-Resume.pdf"
@@ -76,7 +82,8 @@ export default function Hero() {
           </motion.h3>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ delay: 1.6, duration: 0.6 }}
             className="space-y-3"
           >
@@ -94,7 +101,8 @@ export default function Hero() {
         {/* Expertise Section */}
         <motion.div 
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
           transition={{ delay: 1.8 }}
           className="bg-shift-black text-white p-6 border-t border-shift-black"
         >
@@ -106,7 +114,8 @@ export default function Hero() {
               <motion.div 
                 key={i} 
                 initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
                 transition={{ delay: 2 + (i * 0.1) }}
                 className="flex justify-between items-center border-b border-white/10 pb-2"
               >
@@ -137,7 +146,8 @@ export default function Hero() {
           <div className="relative z-10">
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="font-mono text-2xl mb-8 bg-black/10 self-start px-4 py-2 rounded inline-block"
             >
@@ -147,7 +157,8 @@ export default function Hero() {
             <div className="flex flex-row items-start gap-8 mb-4">
               <motion.h1 
                 initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="text-[10vw] font-extrabold leading-[0.75] tracking-tighter"
               >
@@ -157,14 +168,16 @@ export default function Hero() {
               <div className="flex flex-row items-center gap-6 mt-8">
                 <motion.div 
                   initial={{ scaleY: 0 }}
-                  animate={{ scaleY: 1 }}
+                  whileInView={{ scaleY: 1 }}
+                  viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.8 }}
                   className="w-8 h-32 bg-shift-black origin-bottom transform -skew-x-[25deg]"
                 ></motion.div>
                 
                 <motion.p 
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 1 }}
                   className="max-w-[450px] font-bold text-2xl leading-[1.1] tracking-tight"
                 >
@@ -175,7 +188,8 @@ export default function Hero() {
 
             <motion.h1 
               initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-[10vw] font-extrabold leading-[0.75] tracking-tighter"
             >
@@ -184,7 +198,8 @@ export default function Hero() {
 
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 1.2 }}
               className="mt-12 flex flex-row gap-8 items-center"
             >
