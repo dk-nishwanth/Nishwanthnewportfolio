@@ -19,12 +19,30 @@ export default function EducationPage() {
   ];
 
   const certs = [
-    "Unity Game Development - Infosys (2024)",
-    "Java Programming - Infosys (2024)",
-    "AI Foundations - Infosys (2024)",
-    "Prompt Engineering - Industry Certified (2024)",
-    "JavaScript Fundamentals - Industry Certified (2023)",
-    "UiPath Automation - Self-Certified (2023)"
+    { name: "AI-first Software Engineering", link: "https://drive.google.com/file/d/1MEdbtvzoaP7Nic4LScsNKNbhTTfYvjt-/view?usp=drive_link" },
+    { name: "UNITY - Introduction to Unity Game Development", link: "https://drive.google.com/file/d/13x-cYnNlpXjL8_9Badrgbwj4d0iD2BQp/view?usp=drive_link" },
+    { name: "Artificial Intelligence (AI)", link: "https://drive.google.com/file/d/1z1lR8YDDWJDiK4Ut_NIvkSshpWEnnmrL/view?usp=drive_link" },
+    { name: "Artificial Intelligence Foundation Certification", link: "https://drive.google.com/file/d/1JDIpbfIttrRY3oKsAA2Gx90bJM7u-xpI/view?usp=drive_link" },
+    { name: "Blockchain & Hyperledger Fabric - An Overview of Blockchain Technology", link: "https://drive.google.com/file/d/1bZoAsObR2AtmQRyj1e7L1IbwIkmzuYow/view?usp=drive_link" },
+    { name: "Building AI Powered Chatbots Without Code", link: "https://drive.google.com/file/d/1kv1VYJUbHCp_w2SlL8ek5BPy0usgPOhw/view?usp=drive_link" },
+    { name: "CSS3", link: "https://drive.google.com/file/d/1GIePDdNLHWf-dmfb4p7cVRaeGvAe929g/view?usp=drive_link" },
+    { name: "Data Structures and Algorithms Using Java - An Interactive Way", link: "https://drive.google.com/file/d/1kRCM6cyMGazwJOFHpo73xSlMxLAlJDom/view?usp=drive_link" },
+    { name: "Data Structures and Algorithms using Java", link: "https://drive.google.com/file/d/1eeEZKTuo24djSNj7YR4GfjMZNatQ4ZV_/view?usp=drive_link" },
+    { name: "Deep Learning for NLP Introduction", link: "https://drive.google.com/file/d/1rH4uMVda6RRdPTOcfF1gTUmVZZlERYyw/view?usp=drive_link" },
+    { name: "Design Thinking", link: "https://drive.google.com/file/d/14PUp4WhPr7jfR3P7y78MEt9AIxBN1b8M/view?usp=drive_link" },
+    { name: "Hands-On Data Structures and Algorithms in Java 11", link: "https://drive.google.com/file/d/1n5XxM-xjS5pF8cn56BY2bpxd9eG83VXZ/view?usp=drive_link" },
+    { name: "HTML5 - The Language", link: "https://drive.google.com/file/d/1kMoFl93VlZcJYcElKXQFXGybP1_eFq13/view?usp=drive_link" },
+    { name: "Introduction to Artificial Intelligence", link: "https://drive.google.com/file/d/1UlNPQGLvK52LrBbxSpRXbjwfj3RHQn2X/view?usp=drive_link" },
+    { name: "Introduction to Data Analytics", link: "https://drive.google.com/file/d/1pvsfRiACpKPRs4DaDLH5hJq1Zf0JvFLZ/view?usp=drive_link" },
+    { name: "Introduction to Deep Learning", link: "https://drive.google.com/file/d/1hi0vca2ZKer9snONSH6HEQZb-QT9x-AX/view?usp=drive_link" },
+    { name: "Introduction to Natural Language Processing", link: "https://drive.google.com/file/d/1Eyl573jRp2px-5SU6EolLDF9HPB8LfW_/view?usp=drive_link" },
+    { name: "Introduction to OpenAI GPT Models", link: "https://drive.google.com/file/d/1y7jhFMWDoQjDkptn-a8t-4FK83pRtPTD/view?usp=drive_link" },
+    { name: "JavaScript", link: "https://drive.google.com/file/d/1WMiGbjR55ygLxxctDluYBIpeD9LHm2Hh/view?usp=drive_link" },
+    { name: "OpenAI GPT-3 for Developers", link: "https://drive.google.com/file/d/1cLML6UH0eI4X8JMBEh1QhGJqL4L8KOuZ/view?usp=drive_link" },
+    { name: "Oracle SQL Basics", link: "https://drive.google.com/file/d/18wUY8r6Xse6NmcgWRXcyfEwTcTtXFJqj/view?usp=drive_link" },
+    { name: "Prompt Engineering", link: "https://drive.google.com/file/d/1LcoCYgG8cm-bOpzXP3r3Y4l2bqWsD8TD/view?usp=drive_link" },
+    { name: "Site Reliability Engineering", link: "https://drive.google.com/file/d/1FbUsAmvGmywHO4lF1Pr-_OJJxvdK78ha/view?usp=drive_link" },
+    { name: "Start Programming in Core JAVA", link: "https://drive.google.com/file/d/1M-kIkaxwZy7gVzcY0LopFCX_usl_KTQh/view?usp=drive_link" },
   ];
 
   return (
@@ -90,17 +108,21 @@ export default function EducationPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
             {certs.map((cert, i) => (
-              <motion.div
+              <motion.a
                 key={i}
+                href={cert.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ delay: i * 0.05, duration: 0.4 }}
-                className="p-8 lg:p-10 border border-white/10 hover:bg-white/5 transition-colors group"
+                className="p-8 lg:p-10 border border-white/10 hover:bg-white/5 transition-colors group block"
               >
-                <p className="font-mono text-[9px] lg:text-[10px] text-shift-orange mb-4">CERT_0{i + 1}</p>
-                <h3 className="text-lg lg:text-xl font-bold tracking-tight group-hover:translate-x-2 transition-transform">{cert}</h3>
-              </motion.div>
+                <p className="font-mono text-[9px] lg:text-[10px] text-shift-orange mb-4">CERT_{String(i + 1).padStart(2, '0')}</p>
+                <h3 className="text-lg lg:text-xl font-bold tracking-tight group-hover:translate-x-2 transition-transform">{cert.name}</h3>
+                <p className="font-mono text-[9px] lg:text-[10px] text-white/30 mt-3 group-hover:text-shift-orange transition-colors">VIEW CERTIFICATE →</p>
+              </motion.a>
             ))}
           </div>
         </div>
