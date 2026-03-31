@@ -11,6 +11,7 @@ import EducationPage from "./pages/EducationPage";
 import ContactPage from "./pages/ContactPage";
 import { motion, useScroll, useSpring, AnimatePresence } from "motion/react";
 import { useEffect } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -56,6 +57,7 @@ export default function App() {
 
         <Footer />
       </div>
+      <SpeedInsights />
     </Router>
   );
 }
