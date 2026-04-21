@@ -4,10 +4,13 @@ import SolutionsSection from "../components/SolutionsSection";
 import NewsSection from "../components/NewsSection";
 import ExperienceSection from "../components/ExperienceSection";
 import { motion } from "motion/react";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function Home() {
   return (
-    <main>
+    <>
+      <Analytics />
+      <main>
       <Hero />
       
       <motion.div
@@ -155,5 +158,6 @@ export default function Home() {
         </div>
       </section>
     </main>
+    </>
   );
 }
