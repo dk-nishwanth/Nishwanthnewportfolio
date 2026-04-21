@@ -3,15 +3,30 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import LoadingScreen from "./components/LoadingScreen";
 import Home from "./pages/Home";
-import AboutPage from "./pages/AboutPage";
 import ProjectsPage from "./pages/ProjectsPage";
-import DesignsPage from "./pages/DesignsPage";
-import SkillsPage from "./pages/SkillsPage";
-import EducationPage from "./pages/EducationPage";
-import ContactPage from "./pages/ContactPage";
+import { lazy, Suspense } from "react";
 import { motion, useScroll, useSpring, AnimatePresence } from "motion/react";
 import { useEffect } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+
+// Lazy load pages for code splitting
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const DesignsPage = lazy(() => import("./pages/DesignsPage"));
+const SkillsPage = lazy(() => import("./pages/SkillsPage"));
+const EducationPage = lazy(() => import("./pages/EducationPage"));
+const ContactPage = lazy(() => import("./pages/ContactPage"));
+
+// Loading fallback component
+function PageLoader() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-white">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-shift-orange mx-auto mb-4"></div>
+        <p className="text-shift-black/60 font-mono text-sm">Loading page...</p>
+      </div>
+    </div>
+  );
+}
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -46,12 +61,32 @@ export default function App() {
         <AnimatePresence mode="wait">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<AboutPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/designs" element={<DesignsPage />} />
-            <Route path="/skills" element={<SkillsPage />} />
-            <Route path="/education" element={<EducationPage />} />
-            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/about" element={
+              <Suspense fallback={<PageLoader />}>
+                <AboutPage />
+              </Suspense>
+            } />
+            <Route path="/designs" element={
+              <Suspense fallback={<PageLoader />}>
+                <DesignsPage />
+              </Suspense>
+            } />
+            <Route path="/skills" element={
+              <Suspense fallback={<PageLoader />}>
+                <SkillsPage />
+              </Suspense>
+            } />
+            <Route path="/education" element={
+              <Suspense fallback={<PageLoader />}>
+                <EducationPage />
+              </Suspense>
+            } />
+            <Route path="/contact" element={
+              <Suspense fallback={<PageLoader />}>
+                <ContactPage />
+              </Suspense>
+            } />
           </Routes>
         </AnimatePresence>
 

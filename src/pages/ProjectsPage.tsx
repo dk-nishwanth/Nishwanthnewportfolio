@@ -1,13 +1,16 @@
 import { motion } from "motion/react";
+import { useState } from "react";
 
 export default function ProjectsPage() {
+  const [imageLoaded, setImageLoaded] = useState<{[key: number]: boolean}>({});
+
   const projects = [
     { 
       title: "SwitchStep", 
       cat: "Industrial Design / MSME", 
       desc: "Designed modular, eco-friendly footwear with retractable and detachable parts. Created 3D prototypes and refined the design based on user testing.",
       size: "lg",
-      img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200&h=800&fit=crop&q=80",
+      img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=400&fit=crop&q=60",
       link: "https://www.linkedin.com/in/nishwanth-dk"
     },
     { 
@@ -15,7 +18,7 @@ export default function ProjectsPage() {
       cat: "Automation / RPA", 
       desc: "Built a bot to validate timesheets, detect missing hours, and generate error reports. Integrated Excel and Outlook to automate HR tasks.",
       size: "sm",
-      img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=800&fit=crop&q=80",
+      img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=400&fit=crop&q=60",
       link: "https://www.linkedin.com/posts/nishwanth-dk_rpa-uipath-automation-activity-7334252189323825153-b3iz?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEbZioMB2keZd-ksw0VH3R-_N0GYu-HdMGU"
     },
     { 
@@ -23,7 +26,7 @@ export default function ProjectsPage() {
       cat: "UI/UX & Frontend", 
       desc: "Led UI/UX design and frontend development for a spice ecommerce site. Collaborated with local farmers and built the interface in Figma and React.",
       size: "sm",
-      img: "https://images.pexels.com/photos/4551832/pexels-photo-4551832.jpeg?auto=compress&cs=tinysrgb&w=800",
+      img: "https://images.pexels.com/photos/4551832/pexels-photo-4551832.jpeg?auto=compress&cs=tinysrgb&w=400&q=60",
       link: "https://www.linkedin.com/posts/nishwanth-dk_uiux-webdesign-figma-activity-7319240001928474624-G8rk?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEbZioMB2keZd-ksw0VH3R-_N0GYu-HdMGU"
     },
     { 
@@ -31,7 +34,7 @@ export default function ProjectsPage() {
       cat: "Game Dev / UE5", 
       desc: "Developed a space exploration game with interactive planets and custom UI. Used Blueprints to implement movement, environment design, and gameplay.",
       size: "md",
-      img: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1000&h=600&fit=crop&q=80",
+      img: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=600&h=400&fit=crop&q=60",
       link: "https://www.linkedin.com/posts/nishwanth-dk_unrealengine-gamedevelopment-indiedev-activity-7315055371893514243-Z8oi?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEbZioMB2keZd-ksw0VH3R-_N0GYu-HdMGU"
     },
     { 
@@ -39,7 +42,7 @@ export default function ProjectsPage() {
       cat: "Game Dev / UE5", 
       desc: "Developed a high-speed aircraft simulation with custom flight mechanics and environment design in Unreal Engine 5.",
       size: "md",
-      img: "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=1000&h=600&fit=crop&q=80",
+      img: "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=600&h=400&fit=crop&q=60",
       link: "https://www.linkedin.com/posts/nishwanth-dk_unrealengine-gamedevelopment-blueprint-activity-7350096066836320256-GOCY?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEbZioMB2keZd-ksw0VH3R-_N0GYu-HdMGU"
     }
   ];
@@ -77,12 +80,21 @@ export default function ProjectsPage() {
               'md:col-span-2'
             }`}
           >
+            {/* Placeholder background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-shift-black/20 to-shift-black/40" />
+            
+            {/* Image with lazy loading */}
             <img 
               src={p.img} 
               alt={p.title}
-              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+              loading="lazy"
+              onLoad={() => setImageLoaded(prev => ({...prev, [i]: true}))}
+              className={`w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105 ${
+                imageLoaded[i] ? 'opacity-100' : 'opacity-0'
+              }`}
               referrerPolicy="no-referrer"
             />
+            
             <div className="absolute inset-0 bg-gradient-to-t from-shift-black/95 via-shift-black/40 to-transparent flex flex-col justify-end p-6 lg:p-12">
               <p className="font-mono text-[9px] lg:text-[10px] text-shift-orange uppercase tracking-widest mb-2">{p.cat}</p>
               <h3 className="text-2xl lg:text-5xl font-bold text-white tracking-tighter mb-4">{p.title}</h3>

@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 
 export default function Hero() {
   return (
-    <section className="relative bg-shift-orange border-b border-shift-black pt-20 lg:pt-24">
+    <section className="relative bg-shift-orange border-b border-shift-black pt-20">
       {/* Mobile Layout */}
       <div className="lg:hidden flex flex-col min-h-screen">
         {/* Main Content */}

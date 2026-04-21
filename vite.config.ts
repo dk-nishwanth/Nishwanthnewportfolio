@@ -15,9 +15,32 @@ export default defineConfig(({mode}) => {
         '@': path.resolve(__dirname, '.'),
       },
     },
+    build: {
+      // Code splitting for better caching
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'vendor': ['react', 'react-dom', 'react-router-dom'],
+            'motion': ['motion'],
+            'ui': ['lucide-react'],
+          },
+        },
+      },
+      // Minification and optimization
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: true,
+        },
+      },
+      // Enable CSS code splitting
+      cssCodeSplit: true,
+      // Optimize chunk size
+      chunkSizeWarningLimit: 1000,
+      // Source maps for production debugging
+      sourcemap: false,
+    },
     server: {
-      // HMR is disabled in AI Studio via DISABLE_HMR env var.
-      // Do not modifyâfile watching is disabled to prevent flickering during agent edits.
       hmr: process.env.DISABLE_HMR !== 'true',
     },
   };

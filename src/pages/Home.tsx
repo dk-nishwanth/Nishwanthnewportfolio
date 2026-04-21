@@ -5,8 +5,20 @@ import NewsSection from "../components/NewsSection";
 import ExperienceSection from "../components/ExperienceSection";
 import { motion } from "motion/react";
 import { Analytics } from "@vercel/analytics/react";
+import { useEffect } from "react";
+import { usePerformanceMonitoring } from "../hooks/usePerformanceMonitoring";
+import { deferTask } from "../utils/imageOptimization";
 
 export default function Home() {
+  usePerformanceMonitoring();
+
+  useEffect(() => {
+    // Defer non-critical tasks
+    deferTask(() => {
+      // Any non-critical initialization can go here
+    }, 1000);
+  }, []);
+
   return (
     <>
       <Analytics />
